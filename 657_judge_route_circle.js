@@ -10,12 +10,11 @@ const MOVES = {
 };
 
 var judgeCircle = function(moves) {
-    const position = [0, 0];
-    const result = moves.split('')
-        .reduce((acc, move) => {
+    const [endX, endY] = moves.split('')
+        .reduce(([curX, curY], move) => {
             const [x, y] = MOVES[move];
-            return [acc[0] + x, acc[1] + y]
-        }, position);
+            return [curX + x, curY + y]
+        }, [0, 0]);
     
-    return result[0] === 0 && result[1] === 0;
+    return endX === 0 && endY === 0;
 };
