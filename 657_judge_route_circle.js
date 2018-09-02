@@ -1,7 +1,3 @@
-/**
- * @param {string} moves
- * @return {boolean}
- */
 const MOVES = {
     U: [0, 1],
     D: [0, -1],
@@ -9,6 +5,10 @@ const MOVES = {
     R: [1, 0],
 };
 
+/**
+ * @param {string} moves
+ * @return {boolean}
+ */
 var judgeCircle = function(moves) {
     const [endX, endY] = moves.split('')
         .reduce(([curX, curY], move) => {

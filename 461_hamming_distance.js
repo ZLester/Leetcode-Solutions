@@ -1,9 +1,3 @@
-/**
- * @param {number} x
- * @param {number} y
- * @return {number}
- */
-
 const padLeft = (str, toLength) => {
     while (str.length < toLength) {
         str = 0 + str;
@@ -11,6 +5,11 @@ const padLeft = (str, toLength) => {
     return str;
 };
 
+/**
+ * @param {number} x
+ * @param {number} y
+ * @return {number}
+ */
 var hammingDistance = function(x, y) {
     const xStr = x.toString(2);
     const yStr = y.toString(2);

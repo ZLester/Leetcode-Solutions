@@ -1,3 +1,11 @@
+const getLeaves = (node, leaves) => {
+    if (!node.left && !node.right) {
+        leaves.push(node);
+    }
+    node.left && getLeaves(node.left, leaves);
+    node.right && getLeaves(node.right, leaves);
+};
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -10,15 +18,6 @@
  * @param {TreeNode} root2
  * @return {boolean}
  */
-
-const getLeaves = (node, leaves) => {
-    if (!node.left && !node.right) {
-        leaves.push(node);
-    }
-    node.left && getLeaves(node.left, leaves);
-    node.right && getLeaves(node.right, leaves);
-};
-
 var leafSimilar = function(root1, root2) {
     const r1leaves = [];
     const r2leaves = [];
